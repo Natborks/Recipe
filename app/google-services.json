@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "302817396663",
+    "firebase_url": "https://irecipe-db7ef.firebaseio.com",
+    "project_id": "irecipe-db7ef",
+    "storage_bucket": "irecipe-db7ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302817396663:android:c5334deed620db7d",
+        "android_client_info": {
+          "package_name": "com.borketey.bk.recipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302817396663-t6gtq1od8usqvmrcchu5d02m379u6hg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.borketey.bk.recipe",
+            "certificate_hash": "f900520cd9883fc42eed22f070a9e22c12a83d6b"
+          }
+        },
+        {
+          "client_id": "302817396663-niit557jhcp31qduju4hhi2juh7d2oo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzXXEIUdQwWkHj_p7jCHL2X2EHnDNJh4Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302817396663-niit557jhcp31qduju4hhi2juh7d2oo4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302817396663-7d4iemuvtdknqouql9v0omqummss7q3q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.borketey.bk.recipe"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
