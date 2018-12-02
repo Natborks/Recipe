@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.borketey.bk.recipe">
+    I
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecipeDetail" />
-        <activity android:name=".AddRecipe"></activity>
+        <activity android:name=".AddRecipe" />
+        <activity android:name=".FoodList" />
+        <activity android:name=".ChefsDetail"></activity>
     </application>
 
 </manifest>

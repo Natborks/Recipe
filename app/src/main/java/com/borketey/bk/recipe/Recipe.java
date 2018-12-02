@@ -1,5 +1,8 @@
 package com.borketey.bk.recipe;
 
+import com.google.firebase.database.Exclude;
+
+
 public class Recipe  {
 
     private String username;
@@ -7,20 +10,22 @@ public class Recipe  {
     private String title;
     private String method;
     private String photo_url;
+    private String likes;
 
-    public Recipe () {
-
+    public Recipe() {{
+    }
     }
 
     //constructor
     public Recipe (String user, String description, String title,
-                   String method, String photo_url) {
+                   String method, String photo_url,String likes) {
 
         this.username = user;
         this.description = description;
         this.title = title;
         this.method = method;
         this.photo_url = photo_url;
+        this.likes = likes;
     }
 
     /*****
@@ -64,5 +69,13 @@ public class Recipe  {
 
     public String getPhoto_url() {
         return photo_url;
+    }
+
+    public String getLikes() {
+        return likes;
+    }
+
+    public void setLikes(String likes) {
+        this.likes = likes;
     }
 }

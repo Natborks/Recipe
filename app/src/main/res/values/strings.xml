@@ -2,4 +2,79 @@
     <string name="app_name">Recipe</string>
     <string name="action_settings">Settings</string>
     <string name="sign_out">Sign Out</string>
+    <string name="title_placeholder">title</string>
+    <string name="news_placeholder">news</string>
+    <string name="sports_info_placeholder">detail</string>
+    <string name="Chefsepcial">Chef\'s Special</string>
+    <string name="article_heading">Heading</string>
+    <string name="article">Lorem Ipsum dolor sit amet</string>
+    <string name="white_gourd_recipe">Step 1
+Heat oil in a pan on low flame and add cumin seeds (jeera). Once the cumin seeds start to crackle, add diced onions. Saute the onions till they turn slightly pinkish in hue.
+
+Step 2
+Then add diced bottle gourd, garlic, green chillis, moong dal, lemon juice, coriander leaves, salt, black pepper and turmeric. Stir these ingredients well for around 2-3 minutes on medium flame. Then pour water in the pan and allow the ingredients to boil in the water for 1-2 minutes.
+
+Step 3
+Now transfer all the ingredients of the pan in a pressure cooker and pressure cook them. Once done, transfer the mixture in a bowl and allow it to cool.
+
+Step 4
+Blend the cooked mixture with a hand blender to form a soup like consistency. Add some more amount of water if required and boil for three minutes. It can be chilled and served as a cold soup. Serve the delicious and healthy bottle gourd soup after topping it with some fresh coriander.
+    </string>
+    <string name="bottle_gourd_title">
+        Bottle Gourd Soup Recipe
+    </string>
+
+    <string name="fried_rice_recipe">
+        Heat 1 tablespoon of butter into a large skillet.
+        Add the eggs and scramble until fully cooked. Remove them from the pan and set aside.
+        Add the remaining tablespoon of butter into the pan.
+        Add carrots and onion to the pan and cook until tender, 3-4 minutes.
+        Stir in garlic and cook for an additional minute.
+        Add in the cold rice and peas and sauté for 3-4 minutes. The rice should brown up a bit.
+        Add the eggs back to the pan and stir in soy sauce, oyster sauce and sesame oil. Cook for 1-2 minutes to heat through.
+        Serve immediately with green onions for garnish, if desired.
+    </string>
+
+    <string name="fried_rice_title">
+        Fried Rice
+    </string>
+
+    <string name="groundnut_recipe">
+        Season chicken with paprika, ½ onions, salt and pepper. Set aside
+In a large pot, heat oil over low heat, then add the chicken and sauté stirring, frequently, any browned bits off the bottom of the pot.
+Blend tomatoes, onions, garlic, parsley and onions. Pour the mixture in the pot of chicken bring to a boil and let it simmer until tender (depending on the chicken).
+Add the peanut butter and 2 cups of water. Let it simmer for 5 minutes.
+Adjust the soup thickness with water if necessary .if not, return your soup to the heat and let simmer to desired thickness
+Drip a little soup from your stirring spoon. If you are satisfied with the thickness of your soup, serve it.
+    </string>
+
+    <string name="Groundnut">
+        GroundNut Soup
+    </string>
+
+    <string name="kimchi">
+        Step 1
+Place cabbage in a large bowl and sprinkle with salt. Mix thoroughly using gloves, if preferred. Place a heavy pot or pan on top with weights and allow cabbage to sit for 1-2 hours until wilted and water has been released.
+
+Step 2
+Discard water after 1-2 hours. Rinse the cabbage 2-3 times in the sink until salt is removed and allow to drain in a colander for another 15-20 minutes.
+
+Step 3
+Combine cabbage with remaining ingredients (through water) and mix. Using gloves, add the Korean red pepper flakes and begin mixing and rubbing flakes into the mixture.
+
+Step 4
+Once combined, place mixture in a jar pressing down and packing tightly so that the mixture is submerged in its own liquid. Place top on jar and allow to sit at room temperature for 2-5 days. Place jar on a plate since the mixture may bubble over while fermenting.
+
+Step 5
+Each day of fermentation, remove the lid to release gases and press down on the mixture to keep it submerged. You can taste a sample each day to decide if the level of fermentation is to your liking.
+
+Step 6
+After 2-5 days of fermentation, store kimchi in refrigerator.
+    </string>
+
+    <string name="kimchi_title">
+        GroundNut Soup
+    </string>
+    <string name="groundnut_title">GroundNut  Soup</string>
+    <string name="white_gourd_title">White Gourd</string>
 </resources>

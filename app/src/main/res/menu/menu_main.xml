@@ -5,4 +5,10 @@
         android:id="@+id/sign_out_menu"
         android:title="@string/sign_out"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/ChefSpecial"
+        android:title="@string/Chefsepcial"
+        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        app:showAsAction="ifRoom"/>
 </menu>
