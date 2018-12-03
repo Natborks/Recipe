@@ -7,32 +7,36 @@
     android:orientation="vertical"
     tools:context=".FoodList">
 
-=    <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fried Rice"
         android:textSize="@dimen/chefs_list_text"
-        android:onClick="fried"/>
+        android:onClick="fried"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Groundnut"
         android:textSize="@dimen/chefs_list_text"
-        android:onClick="groundnut"/>
+        android:onClick="groundnut"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="kimchi"
         android:textSize="@dimen/chefs_list_text"
-        android:onClick="kimchi"/>
+        android:onClick="kimchi"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="white gourd soup"
         android:onClick="white_gourd_soup"
-        android:textSize="@dimen/chefs_list_text" />
+        android:textSize="@dimen/chefs_list_text"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
 
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     private ArrayList<Recipe> recipeData;
     private Context mContext;
     private Recipe currentRecipe;
+
+    private boolean mProcessliked = false;
 
     public RecipeAdapter (Context context, ArrayList<Recipe> recipe) {
         this.mContext = context;
@@ -58,6 +61,14 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
             //populate view with data
         recipeViewHolder.bindTo(currentRecipe);
+
+        recipeViewHolder.likeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mProcessliked = true;
+                
+            }
+        });
     }
 
     @Override
@@ -77,8 +88,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         public final TextView title;
         public final TextView description;
         public final TextView likes;
+        public final TextView user;
         public ImageView mRecipeImage;
-        public ImageView likeButton;
+        public ImageButton likeButton;
 
         //member Variables for buttons;
         //public Button like;
@@ -91,15 +103,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             likes = itemView.findViewById(R.id.favCount);
             mRecipeImage = itemView.findViewById(R.id.recipeImage);
             likeButton= itemView.findViewById(R.id.favourite);
+            user = itemView.findViewById(R.id.username);
 
-            likeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    currentRecipe.setLikes("2");
-                    likeButton.setColorFilter(ContextCompat.getColor(mContext, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
-
-                }
-            });
 
             itemView.setOnClickListener(this);
         }
@@ -112,14 +117,14 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 title.setText(currentRecipe.getTitle().toString());
                 description.setText(currentRecipe.getDescription().toString());
                 likes.setText(currentRecipe.getLikes().toString());
-                //Glide.with(mRecipeImage.getContext()).load(currentRecipe.getPhoto_url())
-                  //     .into(mRecipeImage);
+                user.setText(currentRecipe.getUsername().toString());
                 Picasso.get().load(currentRecipe.getPhoto_url()).into(mRecipeImage);
 
             } else {
                 title.setText(currentRecipe.getTitle().toString());
                 description.setText(currentRecipe.getDescription().toString());
                 likes.setText(currentRecipe.getLikes().toString());
+                user.setText(currentRecipe.getUsername().toString());
             }
 
             Toast.makeText(mContext, currentRecipe.getPhoto_url(), Toast.LENGTH_LONG).show();

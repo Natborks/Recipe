@@ -13,13 +13,40 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/marginButtonCardUsername">
+
+            <ImageView
+                android:id="@+id/usericon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_accessibility_grey_24dp"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/usericon"
+                android:text="0"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
+                android:scaleType="fitCenter"
                 android:src="@drawable/jollof"
                 android:adjustViewBounds="true"
                 android:id="@+id/recipeImage"/>
@@ -36,6 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crazy Jollof"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/titleCard"
                 android:textColor="@color/cardview_dark_background"/>
 
             <TextView
@@ -46,35 +75,39 @@
                 android:layout_margin="@dimen/default_margin"
                 android:textSize="20dp"
                 android:textColor="@color/cardview_dark_background"
-                android:layout_below="@+id/tileTextView"/>
+                android:layout_below="@+id/tileTextView" />
 
-            <ImageView
-                android:id="@+id/favourite"
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_favorite_black_24dp"
-                android:layout_marginTop="@dimen/icons_margin_top"
-                android:layout_below="@+id/descTextView" />
+                android:orientation="horizontal"
+                android:layout_below="@+id/descTextView">
 
-            <TextView
-                android:id="@+id/favCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/icons_margin_top"
-                android:layout_below="@+id/descTextView"
-                android:layout_toRightOf="@+id/favourite"
-                android:textSize="20sp"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:text="0"/>
+                <ImageButton
+                    android:id="@+id/favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_favorite_black_24dp"
+                    android:layout_marginTop="@dimen/icons_margin_top" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/favourite"
-                android:layout_marginStart="24dp"
-                android:src="@drawable/ic_share_grey_24dp"
-                android:layout_marginTop="@dimen/icons_margin_top"
-                android:layout_below="@+id/descTextView"/>
+                <TextView
+                    android:id="@+id/favCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/icons_margin_top"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="0"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:background="@drawable/ic_share_grey_24dp"
+                    android:layout_marginTop="@dimen/icons_margin_top" />
+            </LinearLayout>
+
         </RelativeLayout>
     </LinearLayout>
 

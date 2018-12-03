@@ -8,4 +8,6 @@
     <dimen name="line_spacing_extra">8dp</dimen>
     <dimen name="chefs_list_text">24sp</dimen>
     <dimen name="subheading">20sp</dimen>
+    <dimen name="titleCard">20dp</dimen>
+    <dimen name="marginButtonCardUsername">34dp</dimen>
 </resources>
