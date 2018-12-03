@@ -9,6 +9,6 @@
     <item
         android:id="@+id/ChefSpecial"
         android:title="@string/Chefsepcial"
-        android:icon="@drawable/ic_local_grocery_store_black_24dp"
+        android:icon="@drawable/chefhat"
         app:showAsAction="ifRoom"/>
 </menu>

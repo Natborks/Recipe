@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -100,38 +101,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 }
             });
 
-           // mFirebaseDatabase = FirebaseDatabase.getInstance();
-           // mRecipeDatabasereference = mFirebaseDatabase.getReference();
-
-            /*mRecipeImage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   // update(currentRecipe, String.valueOf(2));
-                    Toast.makeText(mContext, "th", Toast.LENGTH_SHORT).show();
-                }
-            });*/
-
             itemView.setOnClickListener(this);
         }
-
-        /*public void update(final Recipe recipe, final String likes) {
-            recipe.setLikes(likes);
-            /*mRecipeDatabasereference.child("recipe").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    String key = dataSnapshot.getKey();
-
-                    mRecipeDatabasereference.child(key)
-                            .child("likes")
-                            .setValue(recipe.getLikes());
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        }*/
 
         void bindTo(Recipe currentRecipe) {
 
@@ -142,23 +113,28 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 description.setText(currentRecipe.getDescription().toString());
                 likes.setText(currentRecipe.getLikes().toString());
                 //Glide.with(mRecipeImage.getContext()).load(currentRecipe.getPhoto_url())
-                 //       .into(mRecipeImage);
+                  //     .into(mRecipeImage);
+                Picasso.get().load(currentRecipe.getPhoto_url()).into(mRecipeImage);
+
             } else {
                 title.setText(currentRecipe.getTitle().toString());
                 description.setText(currentRecipe.getDescription().toString());
                 likes.setText(currentRecipe.getLikes().toString());
             }
+
+            Toast.makeText(mContext, currentRecipe.getPhoto_url(), Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onClick(View v) {
-            Recipe currentRecipe = recipeData.get(getAdapterPosition());
+            //Recipe currentRecipe = recipeData.get(getAdapterPosition());
 
             Intent detailIntent = new Intent(mContext, RecipeDetail.class);
 
             detailIntent.putExtra("title", currentRecipe.getTitle());
             detailIntent.putExtra("description", currentRecipe.getDescription());
-            //detailIntent.putExtra("image_url", currentRecipe.getPhoto_url());
+            detailIntent.putExtra("method", currentRecipe.getMethod());
+            detailIntent.putExtra("image_url", currentRecipe.getPhoto_url());
             mContext.startActivity(detailIntent);
         }
     }

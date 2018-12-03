@@ -93,30 +93,25 @@ public class AddRecipe extends AppCompatActivity {
         if (!TextUtils.isEmpty(description) && !TextUtils.isEmpty(title)
                 && !TextUtils.isEmpty(details) && mImageUri != null) {
 
-            StorageReference filepath = mStorageReference.child("recipe_photos").child(mImageUri.getLastPathSegment());
+            final StorageReference filepath = mStorageReference.child("recipe_photos").child(mImageUri.getLastPathSegment());
 
 
             filepath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    Uri downloadUrl = Uri.parse(taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
+                    filepath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
 
-                    /*DatabaseReference databaseReference = mRecipeDatabasereference.push();
+                            Recipe recipe = new Recipe(mUsername, mDetails.getText().toString(),
+                                    mTitle.getText().toString(),
+                                    mDescription.getText().toString(),
+                                    uri.toString(), String.valueOf(0));
 
-                    databaseReference.child("username").setValue(mUsername);
-                    databaseReference.child("title").setValue(title);
-                    databaseReference.child("description").setValue(description);
-                    databaseReference.child("method").setValue(details);
-                    databaseReference.child("photo_url").setValue(downloadUrl.toString());*/
-
-                    Recipe recipe = new Recipe(mUsername, mDetails.getText().toString(),
-                            mTitle.getText().toString(),
-                            mDescription.getText().toString(),
-                            downloadUrl.toString(), String.valueOf(0));
-
-                    mRecipeDatabasereference.push().setValue(recipe);
-
+                            mRecipeDatabasereference.push().setValue(recipe);
+                        }
+                    });
 
 
                     startActivity(new Intent(AddRecipe.this, MainActivity.class));

@@ -52,7 +52,7 @@
                 android:id="@+id/favourite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_favorite_grey_24dp"
+                android:src="@drawable/ic_favorite_black_24dp"
                 android:layout_marginTop="@dimen/icons_margin_top"
                 android:layout_below="@+id/descTextView" />
 
