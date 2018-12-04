@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,14 +31,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
 
     // Member variables.
     private ArrayList<Recipe> recipeData;
     private Context mContext;
     private Recipe currentRecipe;
-
-    private boolean mProcessliked = false;
 
     public RecipeAdapter (Context context, ArrayList<Recipe> recipe) {
         this.mContext = context;
@@ -48,7 +48,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @Override
     public RecipeAdapter.RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new RecipeViewHolder(LayoutInflater.from(mContext).
-        inflate(R.layout.list_item, parent, false));
+                inflate(R.layout.list_item, parent, false));
     }
 
     @Override
@@ -59,16 +59,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         //recipeViewHolder.update(currentRecipe, String.valueOf(2));
 
-            //populate view with data
+        //populate view with data
         recipeViewHolder.bindTo(currentRecipe);
-
-        recipeViewHolder.likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mProcessliked = true;
-                
-            }
-        });
     }
 
     @Override

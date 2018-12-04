@@ -17,11 +17,15 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     private RecipeAdapter mAdapter;
     private Context mContext;
     private String username;
+    private EditText searchView;
+    TextWatcher amountEditTextWatcher;
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mRecipeDatabasereference;
@@ -155,6 +161,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ChefSpecial:
                 Intent intent = new Intent(mContext, FoodList.class);
                 mContext.startActivity(intent);
+                return true;
+            case R.id.search:
+                Intent searchIntent = new Intent(mContext, search.class);
+                mContext.startActivity(searchIntent);
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -199,13 +209,15 @@ public class MainActivity extends AppCompatActivity {
 
             mChildEventListener = new ChildEventListener() {
                 @Override
-                public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                    Recipe recipe = dataSnapshot.getValue(Recipe.class);
-                    mRecipeData.add(new Recipe(recipe.getUsername(),recipe.getDescription(),
-                            recipe.getTitle(),recipe.getMethod(),recipe.getPhoto_url(), recipe.getLikes()));
+                public void onChildAdded(@NonNull final DataSnapshot dataSnapshot, @Nullable String s) {
 
-                    // Notify the adapter of the change.
-                    mAdapter.notifyDataSetChanged();
+                            Recipe recipe = dataSnapshot.getValue(Recipe.class);
+                            mRecipeData.add(new Recipe(recipe.getUsername(),recipe.getDescription(),
+                                    recipe.getTitle(),recipe.getMethod(),recipe.getPhoto_url(), recipe.getLikes()));
+
+                            // Notify the adapter of the change.
+                            mAdapter.notifyDataSetChanged();
+
                 }
                 @Override
                 public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -229,6 +241,10 @@ public class MainActivity extends AppCompatActivity {
             mRecipeDatabasereference.removeEventListener(mChildEventListener);
             mChildEventListener = null;
         }
+
+    }
+
+    public void search () {
 
     }
 

@@ -11,4 +11,10 @@
         android:title="@string/Chefsepcial"
         android:icon="@drawable/chefhat"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/search"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_black_24dp"
+        app:showAsAction="ifRoom"/>
 </menu>

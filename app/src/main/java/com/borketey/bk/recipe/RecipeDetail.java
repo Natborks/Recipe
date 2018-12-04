@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 public class RecipeDetail extends AppCompatActivity {
 
@@ -21,9 +22,11 @@ public class RecipeDetail extends AppCompatActivity {
 
         recipeTitle.setText(getIntent().getStringExtra("title"));
         recipeDescription.setText(getIntent().getStringExtra("decription"));
-        recipeDescription.setText(getIntent().getStringExtra("method"));
+        recipeMethod.setText(getIntent().getStringExtra("method"));
 
         Glide.with(recipeImage.getContext()).load(getIntent().getStringExtra("image_url"))
                 .into(recipeImage);
+
+        Picasso.get().load(getIntent().getStringExtra("image_url")).into(recipeImage);
     }
 }
